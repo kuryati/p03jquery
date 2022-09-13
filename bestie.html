@@ -1,0 +1,106 @@
+<h1>5 kawan terbaik</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	td {
+		background: yellow;
+		cursor: pointer;
+		transition: .2s;
+	}
+
+	td:hover{
+		background: white;
+	}
+	.tabelku {
+		width: 100%;
+		max-width: 500px;
+		text-align: center;
+	}
+</style>
+
+<table class="tabelku">
+	<tr>
+		<td>No</td>
+		<td>Nama</td>
+		<td>alamat</td>
+		<td>Aksi</td>
+	</tr>
+
+	<tr id="row_1">
+		<td>1</td>
+		<td class="nama_mhs">Dhelia</td>
+		<td>Tegal</td>
+		<td class="hapus"id="hapus_1">hapus</td>
+	</tr>
+
+	<tr id="row_2">
+		<td>2</td>
+		<td class="nama_mhs">Adelina</td>
+		<td>NTT</td>
+		<td class="hapus"id="hapus_2">hapus</td>
+	</tr>
+
+	<tr id="row_3">
+		<td>3</td>
+		<td class="nama_mhs">Salsa</td>
+		<td>Pemalang</td>
+		<td class="hapus"id="hapus_3">hapus</td>
+	</tr>
+
+	<tr id="row_4">
+		<td>4</td>
+		<td class="nama_mhs">Diyan</td>
+		<td>Ciamis</td>
+		<td class="hapus"id="hapus_4">hapus</td>
+	</tr>
+
+	<tr id="row_5">
+		<td>5</td>
+		<td class="nama_mhs">Riska</td>
+		<td>Cirebon</td>
+		<td class="hapus"id="hapus_5">hapus</td>
+	</tr>
+
+
+
+<table>
+
+<script> 
+	$(document).ready(function(){
+		// alert(0)
+		$('.nama_mhs').click(function(){
+			// alert(1)
+			let isi = $(this).text();
+			// alert(isi);
+
+			let isi2 = prompt('Ubah dengan:', isi);
+			if(!isi2) return;
+			// alert(isi2);
+
+			$(this).text(isi2)
+		})
+
+
+
+		$('.hapus').click(function(){
+			// alert(1)
+			let yakin = confirm('Yakin mau menghapus?');
+			if(!yakin) return;
+
+			let id = $(this).prop('id');
+			// alert(id);
+			
+			let rid = id.split('__');
+			let baris_ke = rid[1];
+
+			// alert(baris_ke);
+			
+			$('#row__'+baris_ke).slideUp()
+
+
+			// alert('Anda yakin')
+
+
+
+		})
+	})
+</script>
